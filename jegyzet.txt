@@ -1,0 +1,29 @@
+1 = ASCII 49
+ASCII = 128
+65-90 A-Z
+97-122 a-z
+48-57 0-9
+'a'>'b' 97>98 NEM IGAZ!
+b=a++ -- >
+a=6, b=5
+b=++a -->
+a=6 b=6
+String lezáró karakter : \0
+scanf("%s",&s) white spacig
+gets(s) nem white spacig
+fgets(s,21,stdin) max 21 karaktert olvas
+printf(..
+puts(s)
+string.h
+strlen --> string hossza
+strcpy(s,s2) s-be belemásolja az s2-t
+strcmp(s,s2) összehasonlítás: +1 0 -1 (java: compareTo)
+strcat(s,s2) összeadás
+int n = atoi(s) az s stringet int-é alakítja
+atof --> double-é
+itoa (int to string)
+strtok tokenizálás
+int *p; p pointer
+p=&a "a" valtozora mutat
+*p ez esetben "a" értéke
+p "a" címe
