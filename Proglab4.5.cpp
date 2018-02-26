@@ -12,11 +12,13 @@ typedef struct ember{
 	
 }ember;
 
-int hasonlit(ember e1,ember e2){
-	if (e1.szulev>e2.szulev){
+int hasonlit(const void *a,const void *b){
+	ember *e1 = (ember *) a;
+	ember *e2 = (ember *) b;
+	if (e1->szulev>e2->szulev){
 		return 1;
 	}
-	else if (e1.szulev<e2.szulev){
+	else if (e1->szulev<e2->szulev){
 		return -1;
 	}
 	else{
@@ -24,7 +26,7 @@ int hasonlit(ember e1,ember e2){
 	}
 }
 
-void rendez (ember *e,int meret){
+/*void rendez (ember *e,int meret){
 	int i,j;
 	for (i=meret-1;i>1;i--){
 		for (j=0;j<i;j++){
@@ -35,7 +37,7 @@ void rendez (ember *e,int meret){
 			}
 		}
 	}
-}
+}*/
 
 int main(){
 	
@@ -59,7 +61,8 @@ int main(){
 		*/
 		v++;		
 	}
-	rendez(e,v);
+	//rendez(e,v);
+	qsort(e,v,sizeof(ember),hasonlit);
 	for (i=0;i<v;i++){
 		if (e[i].szulev<1996 && e[i].nem=='N'){
 			printf("%s %s %d\n",e[i].vezeteknev,e[i].keresztnev,2014-e[i].szulev);
